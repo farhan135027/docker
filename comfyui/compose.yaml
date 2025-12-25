@@ -1,0 +1,18 @@
+services:
+  comfyui:
+    build: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    ports:
+      - "8188:8188"
+    volumes:
+      - C:\ComfyUI\custom_nodes:/opt/comfyui/custom_nodes
+      - C:\ComfyUI\input:/opt/comfyui/input
+      - C:\ComfyUI\models:/opt/comfyui/models:ro
+      - C:\ComfyUI\output:/opt/comfyui/output
+      - C:\ComfyUI\user:/opt/comfyui/user
