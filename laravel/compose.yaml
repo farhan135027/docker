@@ -1,0 +1,15 @@
+services:
+  laravel:
+    build: laravel
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./laravel:/var/www/laravel
+  mysql:
+    build: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+    volumes:
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:
