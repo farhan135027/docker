@@ -4,11 +4,11 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./laravel:/var/www/laravel
+      - ${LARAVEL_PATH}:/var/www/laravel
   mysql:
     build: mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     volumes:
       - mysql:/var/lib/mysql
 volumes:

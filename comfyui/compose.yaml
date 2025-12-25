@@ -11,8 +11,8 @@ services:
     ports:
       - "8188:8188"
     volumes:
-      - C:\ComfyUI\custom_nodes:/opt/comfyui/custom_nodes
-      - C:\ComfyUI\input:/opt/comfyui/input
-      - C:\ComfyUI\models:/opt/comfyui/models:ro
-      - C:\ComfyUI\output:/opt/comfyui/output
-      - C:\ComfyUI\user:/opt/comfyui/user
+      - ${CUSTOM_NODES_PATH}:/opt/comfyui/custom_nodes
+      - ${INPUT_PATH}:/opt/comfyui/input
+      - ${MODELS_PATH}:/opt/comfyui/models:ro
+      - ${OUTPUT_PATH}:/opt/comfyui/output
+      - ${USER_PATH}:/opt/comfyui/user
